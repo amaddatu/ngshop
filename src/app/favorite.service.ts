@@ -57,4 +57,12 @@ export class FavoriteService {
     localStorage.setItem('favorites', this.stringify(this.favoriteHash));
     // console.log(this.likeHash);
   }
+
+  public isFavorite(dogId: string): boolean{
+    let f = this.favoriteHash.get(dogId);
+    if(f){
+      return f.fav;
+    }
+    return false;
+  }
 }

@@ -7,6 +7,7 @@ import { DogListComponent } from './dog-list/dog-list.component';
 import { DogDetailComponent } from './dog-detail/dog-detail.component';
 import { LikeDetailComponent } from './like-detail/like-detail.component';
 import { FavoriteDetailComponent } from './favorite-detail/favorite-detail.component';
+import { NotifyMessageComponent } from './notify-message/notify-message.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FavoriteDetailComponent } from './favorite-detail/favorite-detail.compo
     DogListComponent,
     DogDetailComponent,
     LikeDetailComponent,
-    FavoriteDetailComponent
+    FavoriteDetailComponent,
+    NotifyMessageComponent
   ],
   imports: [
     BrowserModule,

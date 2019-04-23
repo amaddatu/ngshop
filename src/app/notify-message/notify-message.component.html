@@ -1,0 +1,6 @@
+<p>
+  notify-message works!
+</p>
+<div *ngIf="notifyMessage && notifyMessage.active" [ngClass]="'animated bounce infinite'">
+  {{ notifyMessage.message }}
+</div>

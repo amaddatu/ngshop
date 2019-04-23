@@ -18,4 +18,8 @@ export class DogsService {
   all(): Observable <Dog[]> {
     return of(this.dogData);
   }
+
+  getDog(dogId: string): Dog{
+    return this.dogData.filter( dog => dog.id === dogId )[0];
+  }
 }
