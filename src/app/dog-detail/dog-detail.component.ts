@@ -21,4 +21,9 @@ export class DogDetailComponent implements OnInit {
   ngOnInit() {
   }
 
+  getExtraStyle(){
+    let out = "";
+    out = this.favorite.fav ? out + " favorite" : out;
+    return out;
+  }
 }
