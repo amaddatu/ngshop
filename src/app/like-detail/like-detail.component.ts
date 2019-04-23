@@ -28,7 +28,7 @@ export class LikeDetailComponent implements OnInit {
     this.likeService.save(this.like);
     if(this.favoriteService.isFavorite(this.like.dogId.valueOf())){
       let dog:Dog = this.dogsService.getDog(this.like.dogId.valueOf());
-      this.notifyMessageService.notify(dog.title + " has been liked on your favorite list...");
+      this.notifyMessageService.notify("<div class='image-wrapper'><img src='" + dog.image + "'/></div>" + dog.title + " has been liked on your favorite list...");
       setTimeout( (ns) => {
         this.notifyMessageService.inactive();
       }, 3000, this.notifyMessageService);
