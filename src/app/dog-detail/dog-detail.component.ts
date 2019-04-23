@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Dog } from '../dog';
+import { Like } from '../like';
 
 @Component({
   selector: 'dog',
@@ -9,6 +10,8 @@ import { Dog } from '../dog';
 export class DogDetailComponent implements OnInit {
   @Input()
   dog: Dog;
+  @Input()
+  like: Like;
 
   constructor() { }
 

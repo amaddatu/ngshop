@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import DOGS from "./dogdata.json";
+import DOGS from "./dogdata.1.json";
 import {Observable, of} from 'rxjs';
 import {Dog} from './dog';
 

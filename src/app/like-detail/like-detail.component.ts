@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Like } from '../like';
+import { LikeService } from '../like.service';
 
 @Component({
   selector: 'app-like-detail',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./like-detail.component.css']
 })
 export class LikeDetailComponent implements OnInit {
+  @Input()
+  like: Like;
 
-  constructor() { }
+  constructor(private likeService: LikeService) { }
 
   ngOnInit() {
   }
 
+  incrementLike(){
+    this.like.increment();
+    this.likeService.save(this.like);
+  }
 }
