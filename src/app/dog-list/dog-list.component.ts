@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { DogsService } from '../dogs.service';
 import { LikeService } from '../like.service';
+import { FavoriteService } from '../favorite.service';
 import { Dog } from '../dog';
 import { Like } from '../like';
+import { Favorite } from '../favorite';
 
 @Component({
   selector: 'app-dog-list',
@@ -14,11 +16,13 @@ export class DogListComponent implements OnInit {
   dogs: Dog[];
   dogString = JSON.stringify(this.dogs, null, 2);
   likes: Map<String, Like>;
+  favorites: Map<string, Favorite>;
 
 
   constructor( 
     private dogsService : DogsService , 
-    private likeService : LikeService
+    private likeService : LikeService ,
+    private favoriteService : FavoriteService
   ) { 
     // this.dogs = this.dogsService.all(); 
   }
@@ -26,6 +30,7 @@ export class DogListComponent implements OnInit {
   ngOnInit() {
     this.getUpdates();
     this.getLikeUpdates();
+    this.getFavoriteUpdates();
   }
 
   getUpdates() {
@@ -34,6 +39,9 @@ export class DogListComponent implements OnInit {
 
   getLikeUpdates() {
     return this.likeService.all().subscribe(data => this.likes = data);
+  }
+  getFavoriteUpdates() {
+    return this.favoriteService.all().subscribe(data => this.favorites = data);
   }
 
 
@@ -45,6 +53,17 @@ export class DogListComponent implements OnInit {
       let like = new Like();
       like.dogId = dogId;
       return like;
+    }
+  }
+
+  getFavorite(dogId: string){
+    if(this.favorites.get(dogId)){
+      return this.favorites.get(dogId);
+    }
+    else{
+      let favorite = new Favorite();
+      favorite.dogId = dogId;
+      return favorite;
     }
   }
 

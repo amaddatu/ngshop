@@ -33,7 +33,7 @@ export class LikeService {
   private parse(val: string): Map<String, Like>{
     let out = new Map<String, Like>();
     let arr = JSON.parse(val);
-    console.log(arr);
+    
     out = arr.reduce( (acc, value) => {
       let like = new Like();
       like.dogId = value.dogId;

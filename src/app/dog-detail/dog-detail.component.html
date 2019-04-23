@@ -3,6 +3,9 @@
   <div class="card-body">
     <div class="image-wrapper"><img [src]="dog.image" /></div>
     <h5 class="card-title">{{ dog.title }}</h5>
-    <h6 class="card-subtitle mb-2 text-muted"><app-like-detail [like]="like"></app-like-detail></h6>
+    <h6 class="card-subtitle mb-2 text-muted">
+      <app-like-detail [like]="like"></app-like-detail>
+      <app-favorite-detail [favorite]="favorite"></app-favorite-detail>
+    </h6>
   </div>
 </div>
