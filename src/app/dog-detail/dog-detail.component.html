@@ -1,5 +1,8 @@
-<p>
-  {{ dog.title }}
-  <img [src]="dog.image" />
-  <!--<img [src]="dog.thumbnail" />-->
-</p>
+
+<div class="card dog-card">
+  <div class="card-body">
+    <div class="image-wrapper"><img [src]="dog.image" /></div>
+    <h5 class="card-title">{{ dog.title }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted"><app-like-detail></app-like-detail></h6>
+  </div>
+</div>

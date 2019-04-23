@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { DogListComponent } from './dog-list/dog-list.component';
 import { DogDetailComponent } from './dog-detail/dog-detail.component';
+import { LikeDetailComponent } from './like-detail/like-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DogListComponent,
-    DogDetailComponent
+    DogDetailComponent,
+    LikeDetailComponent
   ],
   imports: [
     BrowserModule,
