@@ -13,8 +13,9 @@ export class NotifyMessageService {
     return of(this.notifyMessage);
   }
 
-  public notify(message: string){
+  public notify(message: string, image: string){
     this.notifyMessage.message = message;
+    this.notifyMessage.image = image;
     this.notifyMessage.active = true;
   }
 

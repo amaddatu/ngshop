@@ -1,12 +1,14 @@
 
 <div *ngIf="notifyMessage && notifyMessage.active" [ngClass]="'notify-message-wrapper'">
   <div [ngClass]="'animated rubberBand infinite'">
+      <div [ngClass]="'image-wrapper'"><img [src]="notifyMessage.image" /></div>
       {{ notifyMessage.message }}
   </div>
   
 </div>
 <div *ngIf="notifyMessage && notifyMessage.active" [ngClass]="'notify-message-wrapper-clone'">
     <div [ngClass]="'animated rubberBand infinite'">
+        <div [ngClass]="'image-wrapper'"><img [src]="notifyMessage.image" /></div>
         {{ notifyMessage.message }}
     </div>
   </div>
