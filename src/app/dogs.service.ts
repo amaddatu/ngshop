@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import DOGS from "./dogdata.json";
+import {Observable, of} from 'rxjs';
+import {Dog} from './dog';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,11 @@ export class DogsService {
 
   constructor() { }
 
-  public all(){
-    return this.dogData;
+  // public all(){
+  //   return this.dogData;
+  // }
+  
+  all(): Observable <Dog[]> {
+    return of(this.dogData);
   }
 }

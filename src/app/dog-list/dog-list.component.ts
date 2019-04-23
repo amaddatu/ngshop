@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DogsService } from '../dogs.service';
+import { Dog } from '../dog';
 
 @Component({
   selector: 'app-dog-list',
@@ -8,7 +9,7 @@ import { DogsService } from '../dogs.service';
 })
 export class DogListComponent implements OnInit {
   title:String = "Dog List";
-  dogs = this.dogsService.all();
+  dogs: Dog[];
   dogString = JSON.stringify(this.dogs, null, 2);
 
 
@@ -17,6 +18,10 @@ export class DogListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getUpdates();
   }
 
+  getUpdates() {
+    return this.dogsService.all().subscribe(data => this.dogs = data);
+  }
 }
